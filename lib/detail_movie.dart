@@ -53,22 +53,14 @@ class DetailMovie extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Column(
-                    children: <Widget>[
-                      Text(
-                        "Genre : " + movie.genre,
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontFamily: 'Poppins',
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+              margin: EdgeInsets.only(top: 16.0),
+              child: Text(
+                "Genre : " + movie.genre,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontFamily: 'Poppins',
+                ),
               ),
             ),
             Container(
@@ -76,7 +68,7 @@ class DetailMovie extends StatelessWidget {
               padding: EdgeInsets.all(16.0),
               child: Text(
                 movie.overview,
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.justify,
                 style: TextStyle(
                   fontSize: 16.0,
                   fontFamily: 'Poppins',
@@ -104,9 +96,9 @@ class _FavoriteButtonState extends State<FavoriteButton> {
     return FloatingActionButton(
       child: Icon(
         isFavorite ? Icons.favorite : Icons.favorite_border,
-        color: Colors.red,
+        color: Colors.white,
       ),
-      backgroundColor: Colors.yellow,
+      backgroundColor: Colors.red,
       onPressed: () {
         setState(() {
           isFavorite = !isFavorite;
