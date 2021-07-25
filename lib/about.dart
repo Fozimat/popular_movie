@@ -22,7 +22,6 @@ class About extends StatelessWidget {
                   Column(
                     children: <Widget>[
                       Container(
-                        height: 250.0,
                         child:
                             Image.asset('images/sunset.jpg', fit: BoxFit.cover),
                       ),
