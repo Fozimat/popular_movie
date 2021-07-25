@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:popular_movie/model/data_movie.dart';
 import 'package:popular_movie/detail_movie.dart';
+import 'package:popular_movie/about.dart';
 
 var fontPoppins = TextStyle(fontFamily: 'Poppins');
 
 class ListMovie extends StatelessWidget {
+  void _navigateToAbout(BuildContext context) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return About();
+    }));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,6 +20,17 @@ class ListMovie extends StatelessWidget {
           'Popular Movie',
           style: fontPoppins,
         ),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              _navigateToAbout(context);
+            },
+          )
+        ],
       ),
       body: ListView.builder(
         itemBuilder: (context, index) {
